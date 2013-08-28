@@ -1,0 +1,15 @@
+require 'spec_helper'
+
+describe "StaticPages" do
+
+  describe "Contact page" do
+    it "should have correct title" do
+      visit contact_path
+      page.should have_title ("WheelTrader | Contact")
+    end
+    it "should have correct content" do
+      visit contact_path
+      page.should have_content("ddd@ddd.com")
+    end
+  end
+end

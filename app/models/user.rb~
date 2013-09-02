@@ -1,0 +1,5 @@
+class User < ActiveRecord::Base
+  VALID_PHONE_REGEX = /\d{9,10}/i
+  validates :phone, presence: true, length: { minimum: 9, maximum: 10 }, 
+    uniqueness: { case_sensitive: false }, format: { with: VALID_PHONE_REGEX }
+end
